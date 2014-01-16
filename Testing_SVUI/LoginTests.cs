@@ -7,6 +7,7 @@ namespace Testing_SVUI
     [TestClass]
     public class LoginTests
     {
+ 
         [TestMethod]
         public void Defaults_To_Login()
         {
@@ -32,10 +33,10 @@ namespace Testing_SVUI
             Assert.IsTrue(Pages.Login.DisplaysInvalidUnPwMessage());
         }
 
-        [TestCleanup]
-        public void CleanUp()
+        [ClassCleanup]
+        public static void CleanUp()
         {
-            // Browser.Close();
+            Browser.Close();
         }
     }
 }

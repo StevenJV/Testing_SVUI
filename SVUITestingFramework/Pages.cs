@@ -15,9 +15,9 @@ namespace SVUITestingFramework
         {
             get
             {
-                var Home = new Home();
-                PageFactory.InitElements(Browser.Driver, Home);
-                return Home;
+                var home = new Home();
+                PageFactory.InitElements(Browser.Driver, home);
+                return home;
             }
         }
 
@@ -25,9 +25,9 @@ namespace SVUITestingFramework
         {
             get
             {
-                var Login = new Login();
-                PageFactory.InitElements(Browser.Driver, Login);
-                return Login;
+                var login = new Login();
+                PageFactory.InitElements(Browser.Driver, login);
+                return login;
             }
         }
 
@@ -35,9 +35,9 @@ namespace SVUITestingFramework
         {
             get
             {
-                var Login = new Samples();
-                PageFactory.InitElements(Browser.Driver, Samples);
-                return Samples;
+                var samples = new Samples();
+                PageFactory.InitElements(Browser.Driver, samples);
+                return samples;
             }
         }
     }
