@@ -40,5 +40,16 @@ namespace SVUITestingFramework
                 return samples;
             }
         }
+
+        public static Grid Grid
+        {
+            get
+            {
+                var grid = new Grid();
+                PageFactory.InitElements(Browser.Driver, grid);
+                return grid;
+            }
+        }
+    
     }
 }

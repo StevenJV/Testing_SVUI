@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Browser.cs" />
+    <Compile Include="Grid.cs" />
     <Compile Include="Samples.cs" />
     <Compile Include="Home.cs" />
     <Compile Include="Login.cs" />

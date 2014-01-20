@@ -5,9 +5,29 @@ using SVUITestingFramework;
 namespace Testing_SVUI
 {
     [TestClass]
+    public class DataTests
+    {
+
+        [TestMethod]
+        public void BMW_Filter_Shows_Two_Cars()
+        {
+            Pages.Grid.Goto();
+            Pages.Grid.FilterByBMW();
+            Assert.IsTrue(2 == Pages.Grid.CountRows());
+        }
+
+        [ClassCleanup]
+        public static void CleanUp()
+        {
+            Browser.Close();
+        }
+    }
+
+
+    [TestClass]
     public class LoginTests
     {
- 
+
         [TestMethod]
         public void Defaults_To_Login()
         {
