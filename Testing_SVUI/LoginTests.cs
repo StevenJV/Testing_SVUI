@@ -10,6 +10,15 @@ namespace Testing_SVUI
 
         [TestMethod]
         public void BMW_Filter_Shows_Two_Cars()
+            // note: this is just for a simple demonstration, not something I would 
+            // normally do, for two reasons.
+            // First of all, this demo site uses Kendo UI for the grid. Filtering
+            // is a function of that product.  If a development team doesn't trust 
+            // that the third-party product works corectly, they shouldn't use it. 
+            // Secondly, this test is extremely dependant on the data; it assumes
+            // that there will only ever be two records for this make of vehicle.
+            // A better way would be to verify that all the rows returned actually
+            // are correct ones, no matter how many. 
         {
             Pages.Grid.Goto();
             Pages.Grid.FilterByBMW();
@@ -30,6 +39,9 @@ namespace Testing_SVUI
 
         [TestMethod]
         public void Defaults_To_Login()
+            // this test is making sure that the site is set up correctly, not
+            // really testing the site's code. That's ok, it is likely an important
+            // thing to be testing anyway. 
         {
             Pages.Home.Goto();
             Assert.IsTrue(Pages.Login.IsAt());
