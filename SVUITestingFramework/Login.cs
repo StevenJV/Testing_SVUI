@@ -18,6 +18,15 @@ namespace SVUITestingFramework
         [FindsBy(How = How.Id, Using = "message")]
         private IWebElement message;
 
+        [FindsBy(How = How.Id, Using = "username")]
+        private IWebElement username;
+
+        [FindsBy(How = How.Id, Using = "password")]
+        private IWebElement password;
+
+        [FindsBy(How = How.Id, Using = "login")]
+        private IWebElement loginButton;
+
         public bool IsAt()
         {
             return Browser.Title == PageTitle;
@@ -29,11 +38,8 @@ namespace SVUITestingFramework
 
         public void LoginWith(string un = "Username", string pwd = "abc123")
         {
-            var username = Browser.Driver.FindElement(By.Id("username"));
             username.SendKeys(un);
-            var password = Browser.Driver.FindElement(By.Id("password"));
             password.SendKeys(pwd);
-            var loginButton = Browser.Driver.FindElement(By.Id("login"));
             loginButton.Click();
         }
 

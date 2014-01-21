@@ -14,6 +14,15 @@ namespace SVUITestingFramework
         private static string PageTitle = "Grid";
         private static string Url = "http://sv-ui.herokuapp.com/grid.html";
 
+        [FindsBy(How = How.XPath, Using = "//div[@id='carGrid']/table/thead/tr/th[2]/a/span")]
+        private IWebElement filterButton;
+
+        [FindsBy(How = How.CssSelector, Using = "input.k-textbox")]
+        private IWebElement modelFilterTextbox1;
+
+        [FindsBy(How = How.CssSelector, Using = "button.k-button")]
+        private IWebElement modelFilterButton;
+
         public bool IsAt()
         {
             return Browser.Title == PageTitle;
@@ -25,10 +34,10 @@ namespace SVUITestingFramework
 
         public void FilterByBMW()
         {
-            Browser.Driver.FindElement(By.XPath("//div[@id='carGrid']/table/thead/tr/th[2]/a/span")).Click();
-            Browser.Driver.FindElement(By.CssSelector("input.k-textbox")).Clear();
-            Browser.Driver.FindElement(By.CssSelector("input.k-textbox")).SendKeys("BMW");
-            Browser.Driver.FindElement(By.CssSelector("button.k-button")).Click();
+            filterButton.Click();
+            modelFilterTextbox1.Clear();
+            modelFilterTextbox1.SendKeys("BMW");
+            modelFilterButton.Click();
         }
 
         public int CountRows()
